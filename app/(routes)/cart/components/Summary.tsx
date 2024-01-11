@@ -24,6 +24,7 @@ export default function Summary({}: SummaryProps) {
     try {
       const resp = await axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}/${storeId}/checkout`,
+        redirectUrl: `${window.location.origin}`,
         {
           productIds: items.map((product) => product.id),
         }
